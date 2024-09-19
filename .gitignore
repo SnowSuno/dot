@@ -1,0 +1,10 @@
+**/*.swo
+
+/*
+!.gitignore
+!README.md
+
+!nvim/
+!kitty/
+!karabiner/
+!fish/
