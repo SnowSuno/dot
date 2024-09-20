@@ -1,5 +1,23 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
+  keys = {
+    { "<leader>e", false },
+    { "<leader>fE", false },
+    {
+      "<leader>ee",
+      function()
+        require("neo-tree.command").execute({ toggle = true, dir = vim.uv.cwd() })
+      end,
+      desc = "Toogle NeoTree",
+    },
+    {
+      "<leader>ef",
+      function()
+        require("neo-tree.command").execute({ reveal = true, dir = vim.uv.cwd() })
+      end,
+      desc = "Reveal current file in NeoTree",
+    },
+  },
   opts = {
     window = {
       mappings = {
