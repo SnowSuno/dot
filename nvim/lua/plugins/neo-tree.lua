@@ -24,6 +24,7 @@ return {
         ["<cr>"] = "open_with_window_picker",
       },
     },
+    use_popups_for_input = false, -- force use vim.input
   },
   dependencies = {
     {
