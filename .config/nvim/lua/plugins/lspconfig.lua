@@ -8,6 +8,7 @@ return {
   opts = {
     servers = {
       vtsls = {
+        init_options = { hostInfo = "neovim" },
         settings = {
           typescript = {
             tsdk = is_yarn_pnp and path.join(root, ".yarn/sdks/typescript/lib") or nil,
