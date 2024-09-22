@@ -1,10 +1,11 @@
-**/*.swo
-
 /*
-!.gitignore
-!README.md
 
-!nvim/
-!kitty/
-!karabiner/
-!fish/
+**/*.swo
+**/.DS_Store
+
+!README.md
+!TODO.md
+
+!.config/
+!.gitconfig
+
