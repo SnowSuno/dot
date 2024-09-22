@@ -1,5 +1,7 @@
 /*
+
 **/*.swo
+**/.DS_Store
 
 !README.md
 !TODO.md
