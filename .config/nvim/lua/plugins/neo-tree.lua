@@ -25,6 +25,11 @@ return {
       },
     },
     use_popups_for_input = false, -- force use vim.input
+    filesystem = {
+      filtered_items = {
+        hide_dotfiles = false,
+      },
+    },
   },
   dependencies = {
     {

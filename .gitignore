@@ -1,12 +1,8 @@
+/*
 **/*.swo
 
-/*
-!.gitignore
 !README.md
+!TODO.md
 
-!nvim/
-!nvim.bak
+!.config/
 
-!kitty/
-!karabiner/
-!fish/
