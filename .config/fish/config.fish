@@ -8,16 +8,8 @@ if status is-interactive
 
     # Fish vim mode
     fish_vi_key_bindings
-    
-end
 
-
-# pnpm
-set -gx PNPM_HOME "/Users/snow.kwon/Library/pnpm"
-if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
 end
-# pnpm end
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
