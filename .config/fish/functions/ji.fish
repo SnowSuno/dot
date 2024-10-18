@@ -19,8 +19,8 @@ function checkout_jira_issue
         git checkout $issue_key
     else
         git checkout main
-        git pull
-        git checkout -b $issue_key
+        and git pull
+        and git checkout -b $issue_key
     end
 end
 
