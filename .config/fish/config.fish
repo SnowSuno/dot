@@ -16,3 +16,4 @@ set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
 set PATH $PATH "$HOME/.local/bin"
+set PATH $PATH "$HOME/.pyenv/bin"
