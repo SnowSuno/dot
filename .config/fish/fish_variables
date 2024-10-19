@@ -3,7 +3,6 @@
 SETUVAR --export EDITOR:vim
 SETUVAR --export LANG:en_US\x2eUTF\x2d8
 SETUVAR --export NODE_OPTIONS:\x2d\x2dmax_old_space_size\x3d8192
-SETUVAR --export PYENV_ROOT:/Users/snow\x2ekwon/\x2epyenv
 SETUVAR __fish_initialized:3400
 SETUVAR fish_color_autosuggestion:brblack
 SETUVAR fish_color_cancel:\x2dr
@@ -34,4 +33,3 @@ SETUVAR fish_pager_color_description:yellow\x1e\x2di
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/Users/snow\x2ekwon/\x2elocal/bin\x1e/Users/snow\x2ekwon/\x2epyenv/bin\x1e/Users/snow\x2ekwon/Library/Application\x20Support/JetBrains/Toolbox/scripts
