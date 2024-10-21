@@ -1,6 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export EDITOR:vim
+SETUVAR --export EDITOR:nvim
 SETUVAR --export LANG:en_US\x2eUTF\x2d8
 SETUVAR --export NODE_OPTIONS:\x2d\x2dmax_old_space_size\x3d8192
 SETUVAR __fish_initialized:3400
