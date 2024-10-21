@@ -6,7 +6,7 @@ return {
       style = "moon",
       on_colors = function(colors)
         colors.green = "#8de8ad"
-        colors.purple = "#e3a7fc"
+        colors.purple = "#8688fc"
         -- colors.hint = colors.orange
         -- colors.error = "#ff0000"
       end,
@@ -38,6 +38,13 @@ return {
         hl.TelescopeResultsTitle = {
           bg = c.bg_dark,
           fg = c.bg_dark,
+        }
+
+        hl.String = {
+          fg = c.yellow,
+        }
+        hl.Include = {
+          fg = c.blue,
         }
       end,
     },
