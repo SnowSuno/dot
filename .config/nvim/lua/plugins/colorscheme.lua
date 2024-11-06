@@ -6,7 +6,7 @@ return {
       style = "moon",
       on_colors = function(colors)
         colors.green = "#8de8ad"
-        colors.purple = "#8688fc"
+        -- colors.purple = "#8688fc"
         -- colors.hint = colors.orange
         -- colors.error = "#ff0000"
       end,
@@ -45,6 +45,13 @@ return {
         }
         hl.Include = {
           fg = c.blue,
+        }
+        hl["@keyword"] = {
+          fg = c.magenta,
+        }
+
+        hl["@property"] = {
+          fg = c.purple,
         }
       end,
     },
