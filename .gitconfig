@@ -20,6 +20,12 @@
   resolve = "!f() { git restore --source=main yarn.lock; yarn; git add yarn.lock .yarn; git merge --continue; }; f"
 	main = "!git fetch origin main:main"
 	gone = ! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D
+  rebase-sq = "!f() { \
+    TARGET_BRANCH="${@: -1}"; \
+    SOURCE_BRANCH=$(git rev-parse --abbrev-ref HEAD); \
+    BASE_COMMIT=$(git merge-base "$SOURCE_BRANCH" "$TARGET_BRANCH"); \
+    git rebase --onto "$TARGET_BRANCH" "$BASE_COMMIT" "$SOURCE_BRANCH"; \
+  }; f"
 
 
 [core]
