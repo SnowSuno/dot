@@ -30,7 +30,7 @@ function change_jira_issue_status
 end
 
 function view_current_issue
-    jira issue view $(git b0) --plain
+    jira issue view (git b0) --plain
 end
 
 function ji
