@@ -19,3 +19,10 @@ set --export PATH $BUN_INSTALL/bin $PATH
 
 set PATH $PATH "$HOME/.local/bin"
 set PATH $PATH "$HOME/.pyenv/bin"
+
+
+if status is-interactive
+    and not set -q TMUX
+    exec tmux new -As0
+end
+clear
