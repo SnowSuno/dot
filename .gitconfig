@@ -26,6 +26,7 @@
     BASE_COMMIT=$(git merge-base "$SOURCE_BRANCH" "$TARGET_BRANCH"); \
     git rebase --onto "$TARGET_BRANCH" "$BASE_COMMIT" "$SOURCE_BRANCH"; \
   }; f"
+  rb = "!f() { git rebase --onto \"$1\" $(git merge-base \"$1\" HEAD); }; f"
 
 
 [core]
@@ -53,3 +54,8 @@
 
 [diff]
     colorMoved = default
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
