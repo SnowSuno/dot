@@ -69,7 +69,7 @@ return {
             -- filter using buffer options
             bo = {
               -- if the file type is one of following, the window will be ignored
-              filetype = { "neo-tree", "neo-tree-popup", "notify", "noice" },
+              filetype = { "neo-tree", "neo-tree-popup", "snacks_notif", "notify", "noice" },
               -- if the buffer type is one of following, the window will be ignored
               buftype = { "terminal", "quickfix" },
             },
