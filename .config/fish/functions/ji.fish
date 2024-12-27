@@ -24,6 +24,18 @@ function checkout_jira_issue
     end
 end
 
+function checkout_jira_issue_from_current_branch
+    echo "Checkout 할 이슈를 선택하세요"
+    set -l issue_key (select_issue_except "(Done, Wontfix, Backlog)")
+
+
+    if git show-branch $issue_key &>/dev/null
+        git checkout $issue_key
+    else
+        git checkout -b $issue_key
+    end
+end
+
 function change_jira_issue_status
     set -l issue_key (select_issue_except "(Done, Wontfix)")
     jira issue move $issue_key
@@ -37,6 +49,8 @@ function ji
     switch $argv[1]
         case c checkout
             checkout_jira_issue
+        case cc checkout-current
+            checkout_jira_issue_from_current_branch
         case m move
             change_jira_issue_status
         case v view
