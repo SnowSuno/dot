@@ -17,7 +17,8 @@
 	cleanbranch = "!git branch -d $(git branch --merged | grep -v '^\\*\\|\\<master$')"
 	rebase-onto = "!f() { git rebase --onto main $(git merge-base \"$1\" \"$2\") \"$1\"; }; f"
 	update = "!f() { git fetch origin $1:$1; }; f"
-  resolve = "!f() { git restore --source=main yarn.lock; yarn; git add yarn.lock .yarn; git merge --continue; }; f"
+  continue = "!GIT_SEQUENCE_EDITOR=true git rebase --continue 2>/dev/null || git merge --continue 2>/dev/null || echo 'No rebase or merge in progress'"
+  resolve = "!f() { git restore --source=main yarn.lock; yarn; git add yarn.lock .yarn; git continue; }; f"
 	main = "!git fetch origin main:main"
 	gone = ! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D
   rebase-sq = "!f() { \
