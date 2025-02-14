@@ -1,4 +1,7 @@
 theme = "tokyonight_moon"
 link-url = true
-adjust-cursor-thickness=2
-adjust-cursor-height=-2
+adjust-cursor-thickness = 1
+adjust-cursor-height = -2
+
+font-family = "SF Mono Light"
+font-size = 12
