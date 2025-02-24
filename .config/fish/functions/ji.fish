@@ -1,13 +1,9 @@
-function list_issues_except
+function list_issues
     jira issue list \
-        -q"project in (INSU, POTI, CAR) AND assignee = currentUser() AND status not in $argv[1]" \
+        -q"project in (CAR, INSU) AND assignee = currentUser() AND status not in (Done, Wontfix)" \
         --plain \
         --columns key,status,summary \
         --no-headers
-end
-
-function select_issue_except
-    list_issues_except $argv[1] | fzf --height ~100% | awk '{print $1}'
 end
 
 function select_one
@@ -25,7 +21,7 @@ end
 
 function checkout_jira_issue
     echo "Checkout 할 이슈를 선택하세요"
-    set -l issue_key (list_issues_except "(Done, Wontfix)" | select_one)
+    set -l issue_key (list_issues | select_one)
 
 
     if git show-branch $issue_key &>/dev/null
@@ -40,7 +36,7 @@ end
 
 function checkout_jira_issue_from_current_branch
     echo "Checkout 할 이슈를 선택하세요"
-    set -l issue_key (list_issues_except "(Done, Wontfix)" | select_one)
+    set -l issue_key (list_issues | select_one)
 
 
     if git show-branch $issue_key &>/dev/null
@@ -52,12 +48,12 @@ function checkout_jira_issue_from_current_branch
 end
 
 function change_jira_issue_status
-    set -l issue_key (list_issues_except "(Done, Wontfix)" | select_one)
+    set -l issue_key (list_issues | select_one)
     jira issue move $issue_key
 end
 
 function bulk_update
-    set -l issue_keys (list_issues_except "(Done, Wontfix)" | select_many)
+    set -l issue_keys (list_issues | select_many)
 
     for issue in $issue_keys
         jira issue move $issue Done
@@ -83,7 +79,7 @@ function ji
         case v view
             view_current_issue
         case ls list
-            list_issues_except "(Done, Wontfix)"
+            list_issues
         case '*'
             echo "Unknown command '$argv[1]'"
     end
