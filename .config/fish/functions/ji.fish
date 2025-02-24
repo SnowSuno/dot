@@ -25,7 +25,7 @@ end
 
 function checkout_jira_issue
     echo "Checkout 할 이슈를 선택하세요"
-    set -l issue_key (list_issues_except "(Done, Wontfix, Backlog)" | select_one)
+    set -l issue_key (list_issues_except "(Done, Wontfix)" | select_one)
 
 
     if git show-branch $issue_key &>/dev/null
@@ -40,7 +40,7 @@ end
 
 function checkout_jira_issue_from_current_branch
     echo "Checkout 할 이슈를 선택하세요"
-    set -l issue_key (list_issues_except "(Done, Wontfix, Backlog)" | select_one)
+    set -l issue_key (list_issues_except "(Done, Wontfix)" | select_one)
 
 
     if git show-branch $issue_key &>/dev/null
@@ -83,8 +83,6 @@ function ji
         case v view
             view_current_issue
         case ls list
-            list_issues_except "(Done, Wontfix, Backlog)"
-        case ll list-all
             list_issues_except "(Done, Wontfix)"
         case '*'
             echo "Unknown command '$argv[1]'"
