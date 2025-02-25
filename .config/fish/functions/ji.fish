@@ -1,6 +1,6 @@
 function list_issues
     jira issue list \
-        -q"project in (CAR, INSU) AND assignee = currentUser() AND status not in (Done, Wontfix)" \
+        -q"project in (CAR, INSU, AIT) AND assignee = currentUser() AND status not in (Done, Wontfix)" \
         --plain \
         --columns key,status,summary \
         --no-headers
