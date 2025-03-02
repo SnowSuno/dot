@@ -155,6 +155,10 @@
                         {
                             "from": { "key_code": "page_up" },
                             "to": [{ "consumer_key_code": "play_or_pause" }]
+                        },
+                        {
+                            "from": { "key_code": "right_control" },
+                            "to": [{ "key_code": "left_option" }]
                         }
                     ]
                 },
