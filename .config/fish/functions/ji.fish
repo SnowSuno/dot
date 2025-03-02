@@ -26,11 +26,11 @@ function checkout_jira_issue
 
     if git show-branch $issue_key &>/dev/null
         git checkout $issue_key
-        and set_branch_description
     else
         git checkout main
         and git pull
         and git checkout -b $issue_key
+        and set_branch_description
     end
 end
 
@@ -41,9 +41,9 @@ function checkout_jira_issue_from_current_branch
 
     if git show-branch $issue_key &>/dev/null
         git checkout $issue_key
-        and set_branch_description
     else
         git checkout -b $issue_key
+        and set_branch_description
     end
 end
 
