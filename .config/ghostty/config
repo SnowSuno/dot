@@ -5,3 +5,8 @@ adjust-cursor-height = -2
 
 font-family = "SF Mono Light"
 font-size = 12
+
+shell-integration = detect
+
+keybind = global:ctrl+backslash=toggle_quick_terminal
+keybind = global:ctrl+escape=toggle_visibility
