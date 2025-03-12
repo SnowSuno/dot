@@ -8,5 +8,8 @@ font-size = 12
 
 shell-integration = detect
 
+quick-terminal-position = bottom
+quick-terminal-screen = mouse
+
 keybind = global:ctrl+backslash=toggle_quick_terminal
 keybind = global:ctrl+escape=toggle_visibility
