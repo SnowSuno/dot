@@ -2,8 +2,8 @@
 # VERSION: 3.0
 SETUVAR --export EDITOR:nvim
 SETUVAR --export LANG:en_US\x2eUTF\x2d8
-SETUVAR --export NODE_OPTIONS:\x2d\x2dmax_old_space_size\x3d8192
-SETUVAR __fish_initialized:3400
+SETUVAR --export NODE_OPTIONS:\x2d\x2dmax_old_space_size\x3d16384
+SETUVAR __fish_initialized:3800
 SETUVAR fish_color_autosuggestion:brblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:blue
@@ -21,7 +21,7 @@ SETUVAR fish_color_operator:brcyan
 SETUVAR fish_color_param:cyan
 SETUVAR fish_color_quote:yellow
 SETUVAR fish_color_redirection:cyan\x1e\x2d\x2dbold
-SETUVAR fish_color_search_match:bryellow\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_search_match:white\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen
