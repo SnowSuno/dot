@@ -1,0 +1,4 @@
+extensions/
+config.json
+
+*/.env
