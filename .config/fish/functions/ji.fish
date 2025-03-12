@@ -1,6 +1,6 @@
 function list_issues
     jira issue list \
-        -q"project in (CAR, INSU, AIT) AND assignee = currentUser() AND status not in (Done, Wontfix)" \
+        -q"project in (CAR, INSU, AIT, POTI) AND assignee = currentUser() AND status not in (Done, Wontfix, Archived)" \
         --plain \
         --columns key,status,summary \
         --no-headers
@@ -23,7 +23,6 @@ function checkout_jira_issue
     echo "Checkout 할 이슈를 선택하세요"
     set -l issue_key (list_issues | select_one)
 
-
     if git show-branch $issue_key &>/dev/null
         git checkout $issue_key
     else
@@ -31,6 +30,7 @@ function checkout_jira_issue
         and git pull
         and git checkout -b $issue_key
         and set_branch_description
+        and jira issue move $issue_key "In Progress"
     end
 end
 
@@ -38,12 +38,12 @@ function checkout_jira_issue_from_current_branch
     echo "Checkout 할 이슈를 선택하세요"
     set -l issue_key (list_issues | select_one)
 
-
     if git show-branch $issue_key &>/dev/null
         git checkout $issue_key
     else
         git checkout -b $issue_key
         and set_branch_description
+        and jira issue move $issue_key "In Progress"
     end
 end
 
@@ -55,8 +55,8 @@ end
 function bulk_update
     set -l issue_keys (list_issues | select_many)
 
-    for issue in $issue_keys
-        jira issue move $issue Done
+    for issue_key in $issue_keys
+        jira issue move $issue_key Done
     end
 end
 
@@ -80,6 +80,8 @@ function ji
             view_current_issue
         case ls list
             list_issues
+        case u update
+            set_branch_description
         case '*'
             echo "Unknown command '$argv[1]'"
     end
