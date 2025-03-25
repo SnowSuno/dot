@@ -1,7 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export EDITOR:nvim
-SETUVAR --export FZF_DEFAULT_OPTS:\x2d\x2dpointer\x3d\x22\u25b6\ufe0e\x22\x20\x2d\x2dmarker\x3d\x22\u2713\x22
+SETUVAR --export FZF_DEFAULT_OPTS:\x2d\x2dpointer\x3d\u25b6\ufe0e\x20\x2d\x2dmarker\x3d\u2713
 SETUVAR --export LANG:en_US\x2eUTF\x2d8
 SETUVAR --export NODE_OPTIONS:\x2d\x2dmax_old_space_size\x3d16384
 SETUVAR __fish_initialized:3800
