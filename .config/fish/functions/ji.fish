@@ -70,6 +70,8 @@ function ji
             checkout_jira_issue
         case cc checkout-current
             checkout_jira_issue_from_current_branch
+        case s select
+            list_issues | select_one
         case sf set-force
             set_branch_description
         case m move
