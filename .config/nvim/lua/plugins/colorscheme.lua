@@ -1,4 +1,5 @@
 return {
+  "nyoom-engineering/oxocarbon.nvim",
   {
     lazy = true,
     "folke/tokyonight.nvim",
@@ -58,6 +59,6 @@ return {
   },
   {
     "LazyVim/LazyVim",
-    opts = { colorscheme = "tokyonight" },
+    opts = { colorscheme = "oxocarbon" },
   },
 }
