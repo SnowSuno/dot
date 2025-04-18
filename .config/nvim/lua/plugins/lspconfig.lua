@@ -25,6 +25,9 @@ return {
           settings = {
             workingDirectories = { mode = "auto" },
             nodePath = is_yarn_pnp and path.join(root, ".yarn/sdks") or nil,
+            experimental = {
+              useFlatConfig = true,
+            },
           },
         },
       })
