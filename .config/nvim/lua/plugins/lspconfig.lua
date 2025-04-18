@@ -37,6 +37,9 @@ return {
     "stevearc/conform.nvim",
     optional = true,
     opts = {
+      formatters_by_ft = {
+        python = { "ruff_fix", "ruff_format" },
+      },
       formatters = {
         biome = {
           -- 기본적으로는 format만 하지만 check (format + lint)도 같이 하도록 합니다.
