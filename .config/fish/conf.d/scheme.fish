@@ -33,6 +33,7 @@ end
 abbr -a sc scheme
 
 abbr -a --command scheme show 'exp+showbility://expo-development-client/?url=http%3A%2F%2F(ipconfig getifaddr en13)%3A8081'
+abbr -a --set-cursor --command scheme car 'supertoss://m/car/%'
 
 complete -c scheme -l output -a 'supertoss:// servicetoss://'
 
