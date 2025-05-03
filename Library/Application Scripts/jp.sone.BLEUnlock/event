@@ -1,0 +1,30 @@
+#!/bin/bash
+
+set -eo pipefail
+
+source ~/.config/.env
+
+notify() {
+  local icon=$1
+  local title=$2
+  local message=$3
+
+  curl -X GET "$PUSH_WEBHOOK_URL/$(echo "$title" | jq -sRr '@uri')/$(echo "$message" | jq -sRr '@uri')" \
+    -d "icon=https://static.toss.im/icons/png/4x/$icon.png" \
+    -d "group=Personal"
+}
+
+case $1 in
+away)
+  notify "icon-lock" "자동 잠김" "자동 잠김되었어요."
+  ;;
+lost)
+  notify "icon-lock" "자동 잠김" "신호 끊김으로 인해 잠김되었어요."
+  ;;
+unlocked)
+  notify "icon-unlock" "잠금 해제됨" "자동 잠금 해제되었어요."
+  ;;
+intruded)
+  # notify "$(hostname -s) is manually unlocked." #$(capture)
+  ;;
+esac
