@@ -41,6 +41,8 @@ hs.usb.watcher
 
 hs.hotkey.bind({ "cmd", "ctrl" }, "s", function()
 	if tunnelTask and tunnelTask:isRunning() then
+		hs.alert("Loading Screenshot")
+
 		local filePath = os.getenv("HOME") .. "/screenshots/" .. os.date("%Y%m%d_%H%M%S") .. ".png"
 
 		hs.task
