@@ -22,7 +22,7 @@
 # @raycast.author Soonho Kwon
 # @raycast.authorURL An URL for one of your social medias
 
-source ~/.config/raycast/scripts/.env
+source ~/.config/.env
 
 # normalized=$(python3 -c "import sys, unicodedata; print(unicodedata.normalize('NFC', sys.argv[1]))" "$1")
 

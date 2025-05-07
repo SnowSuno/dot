@@ -22,7 +22,7 @@
 # @raycast.author Soonho Kwon
 # @raycast.authorURL An URL for one of your social medias
 
-source ~/.config/raycast/scripts/.env
+source ~/.config/.env
 
 ticket_number=$(curl -s --request POST \
   --url "$JIRA_BASE_URL/rest/api/3/issue" \
