@@ -8,12 +8,15 @@ local function startTunnel()
 		return
 	end
 
+	hs.alert("연결중")
+
 	tunnelTask = hs.task.new(shell, nil, { "-l", "-c", shellEnv .. "ENABLE_GO_IOS_AGENT=user sudo ios tunnel start" })
 
 	if tunnelTask and tunnelTask:start() then
+		hs.alert("iOS 연결됨")
 		-- hs.notify.new({ title = "iOS 터널", informativeText = "시작됨" }):send()
 	else
-		hs.alert.show("tunnel 시작 실패")
+		hs.alert.show("iOS 연결 실패")
 	end
 end
 
@@ -22,6 +25,7 @@ local function stopTunnel()
 	if tunnelTask and tunnelTask:isRunning() then
 		tunnelTask:terminate()
 		tunnelTask = nil
+		hs.alert("iOS 연결 끊김")
 		-- hs.notify.new({ title = "iOS 터널", informativeText = "종료됨" }):send()
 	end
 end
